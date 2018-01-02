@@ -29,3 +29,4 @@ rails g model book title rating:integer --no-fixture
 rake db:seed
 curl http://localhost:3000/books
 rake routes
+rails g migration add_finished_at_to_books finished_at:datetime

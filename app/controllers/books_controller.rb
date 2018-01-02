@@ -6,6 +6,6 @@ class BooksController < ApplicationController
             books = books.where(rating: rating)
         end
 
-        render json: books, status: 200, except: [:destroy, :update]
+        render json: books, status: 200
     end
 end
