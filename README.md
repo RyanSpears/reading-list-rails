@@ -21,9 +21,11 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Commands
 
-rake db:migrate
+rake db:migrate [RAILS_ENV=test]
 rails g integration_test  listing_books
 rails g model book title rating:integer --no-fixture
-db:migrate RAILS_ENV=test
+rake db:seed
+curl http://localhost:3000/books
+rake routes
