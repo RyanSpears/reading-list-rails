@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+rake db:migrate
+rails g integration_test  listing_books
+rails g model book title rating:integer --no-fixture
+db:migrate RAILS_ENV=test
