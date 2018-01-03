@@ -11,7 +11,7 @@ class ListingBooksTest < ActionDispatch::IntegrationTest
     get '/books'
 
     assert_equal 200, response.status
-    assert_equal Mime[:json], response.content_type  
+    assert_equal Mime[:json], response.content_type
     assert_equal 2, json(response.body).size
   end
 
