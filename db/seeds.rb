@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Create Genres
+Genre.create!(name: 'Science Fiction')
+Genre.create!(name: 'Programming')
+
 # Create Books
 Book.create!(title: 'Pragmatic Programmer', rating: 5)
 Book.create!(title: 'Ender\'s Game', rating: 4)

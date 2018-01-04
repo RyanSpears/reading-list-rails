@@ -33,3 +33,4 @@ rails g migration add_finished_at_to_books finished_at:datetime
 rails g integration_test creating_books
 rails g integration_test deleting_books
 rails g serializer book
+rails g model genre name --no-fixture

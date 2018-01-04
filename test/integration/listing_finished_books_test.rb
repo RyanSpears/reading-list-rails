@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class ListingFinishedBooksTest < ActionDispatch::IntegrationTest
+
   setup do
-    Book.create!(title: 'Finished', finished_at: 1.day.ago)
-    Book.create!(title: 'Not Finished', finished_at: nil)
+    @finished = Genre.create!(name: 'Finished')
+
+    @finished.books.create!(title: 'Finished', finished_at: 1.day.ago)
+    @finished.books.create!(title: 'Not Finished', finished_at: nil)
   end
 
   test 'list finished books in json' do
