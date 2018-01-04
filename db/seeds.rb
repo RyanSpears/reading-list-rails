@@ -7,9 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create Genres
-Genre.create!(name: 'Science Fiction')
-Genre.create!(name: 'Programming')
+
+if Genre.where(name: 'Science Fiction').nil?
+  Genre.create!(name: 'Science Fiction')
+end
+
+if Genre.where(name: 'Programming').nil?
+  Genre.create!(name: 'Programming')
+end
 
 # Create Books
-Book.create!(title: 'Pragmatic Programmer', rating: 5)
-Book.create!(title: 'Ender\'s Game', rating: 4)
+#
+if Book.where(name: 'Pragmatic Programmer').nil?
+  programming = Genre.where(name: 'Programming')
+  programming.books.create!(title: 'Pragmatic Programmer', rating: 5)
+end
+
+if Book.where(name: 'Ender\'s Game').nil?
+  science_fiction = Genre.where(name: 'Science Fiction')
+  science_fiction.books.create!(title: 'Ender\'s Game', rating: 5)
+end
