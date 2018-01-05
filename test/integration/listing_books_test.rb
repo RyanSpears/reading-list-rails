@@ -18,6 +18,10 @@ class ListingBooksTest < ActionDispatch::IntegrationTest
     assert_equal 200, response.status
     assert_equal Mime[:json], response.content_type
     assert_equal 2, json(response.body).size
+
+    books = json(response.body)
+    programming_book = books.find{ |b| b[:genre_id] == @science_fiction.id}
+    assert_equal @science_fiction.id, programming_book[:genre_id]
   end
 
   test 'list top rated books' do
